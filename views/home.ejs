@@ -1,9 +1,14 @@
 <%-include("partial/header")-%>
 <h1>home</h1>
 <p><%=startingContent%></p>
-<% for(var i=0;i<blog.length;i++){ %>
-  <h1><%=blog[i].title%></h1>
-  <p><%=blog[i].content.substring(0,100)+"..."%>
-  <a href="/posts/<%=blog[i].title%>">read more</a></p>
-<% } %>
+<%  posts.forEach(function(post){ %>
+
+  <h1><%=post.title%></h1>
+  <p>
+  <%=post.content.substring(0, 100) + " ..."%>
+  <a href="/posts/<%=post._id%>">Read More</a>
+  </p>
+
+
+  <% }) %>
 <%-include("partial/footer")-%>
